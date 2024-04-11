@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1964E6BE-B3B5-4FE5-958C-518EB657D728}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DoAn</RootNamespace>
+    <AssemblyName>DoAn</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BanGiayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanGiayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BanGiayDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanGiayDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DienThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DienThongTin.Designer.cs">
+      <DependentUpon>DienThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDienAD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDienAD.Designer.cs">
+      <DependentUpon>GiaoDienAD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>NhaCungCap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NhaCungCap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien.Designer.cs">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyKho.Designer.cs">
+      <DependentUpon>QuanLyKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNCC.Designer.cs">
+      <DependentUpon>QuanLyNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNhanVien.Designer.cs">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DienThongTin.resx">
+      <DependentUpon>DienThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDienAD.resx">
+      <DependentUpon>GiaoDienAD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien.resx">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="QuanLyKho.resx">
+      <DependentUpon>QuanLyKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNCC.resx">
+      <DependentUpon>QuanLyNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNhanVien.resx">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BanGiayDataSet.xsc">
+      <DependentUpon>BanGiayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BanGiayDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BanGiayDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BanGiayDataSet.xss">
+      <DependentUpon>BanGiayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BanGiayDataSet1.xsc">
+      <DependentUpon>BanGiayDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BanGiayDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BanGiayDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BanGiayDataSet1.xss">
+      <DependentUpon>BanGiayDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="NhaCungCap.xsc">
+      <DependentUpon>NhaCungCap.xsd</DependentUpon>
+    </None>
+    <None Include="NhaCungCap.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NhaCungCap.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NhaCungCap.xss">
+      <DependentUpon>NhaCungCap.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VanTrang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VanDen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CaRo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VanCam.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VanDo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VanDoTrang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VanTim.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VanXanhTrang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VanLuc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Altamesa500jpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Footwear.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hedgehodjpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OxeyeTechjpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Snowfuse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VectivInfinite2.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
