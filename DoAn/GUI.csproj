@@ -245,5 +245,19 @@
   <ItemGroup>
     <None Include="Resources\VectivInfinite2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{a1288ccc-82c9-453a-a66b-1f0b046183d6}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{ece30ad9-635e-4cab-9e30-5eb78885c682}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{c041ce47-3716-455e-9d2b-cb44a0d4e411}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -65,17 +65,6 @@
             this.chkTT = new System.Windows.Forms.CheckBox();
             this.cboLoai = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtXuatXu = new System.Windows.Forms.Label();
-            this.txtXuattXu = new System.Windows.Forms.TextBox();
-            this.txtSize = new System.Windows.Forms.Label();
-            this.txtSize1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtKM = new System.Windows.Forms.TextBox();
-            this.banGiayDataSet1 = new DoAn.BanGiayDataSet1();
-            this.sANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sANPHAMTableAdapter = new DoAn.BanGiayDataSet1TableAdapters.SANPHAMTableAdapter();
             this.tENSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xUATXUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gIANHAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,9 +77,20 @@
             this.mANCCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIZEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mASPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.banGiayDataSet1 = new DoAn.BanGiayDataSet1();
+            this.txtXuatXu = new System.Windows.Forms.Label();
+            this.txtXuattXu = new System.Windows.Forms.TextBox();
+            this.txtSize = new System.Windows.Forms.Label();
+            this.txtSize1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtKM = new System.Windows.Forms.TextBox();
+            this.sANPHAMTableAdapter = new DoAn.BanGiayDataSet1TableAdapters.SANPHAMTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -434,84 +434,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1089, 180);
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // txtXuatXu
-            // 
-            this.txtXuatXu.AutoSize = true;
-            this.txtXuatXu.Location = new System.Drawing.Point(839, 288);
-            this.txtXuatXu.Name = "txtXuatXu";
-            this.txtXuatXu.Size = new System.Drawing.Size(91, 25);
-            this.txtXuatXu.TabIndex = 19;
-            this.txtXuatXu.Text = "Xuất xứ:";
-            // 
-            // txtXuattXu
-            // 
-            this.txtXuattXu.Location = new System.Drawing.Point(936, 289);
-            this.txtXuattXu.Name = "txtXuattXu";
-            this.txtXuattXu.Size = new System.Drawing.Size(145, 31);
-            this.txtXuattXu.TabIndex = 29;
-            // 
-            // txtSize
-            // 
-            this.txtSize.AutoSize = true;
-            this.txtSize.Location = new System.Drawing.Point(191, 388);
-            this.txtSize.Name = "txtSize";
-            this.txtSize.Size = new System.Drawing.Size(60, 25);
-            this.txtSize.TabIndex = 16;
-            this.txtSize.Text = "Size:";
-            // 
-            // txtSize1
-            // 
-            this.txtSize1.Location = new System.Drawing.Point(257, 385);
-            this.txtSize1.Name = "txtSize1";
-            this.txtSize1.Size = new System.Drawing.Size(145, 31);
-            this.txtSize1.TabIndex = 28;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(485, 388);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(92, 25);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "Đơn giá:";
-            // 
-            // txtDonGia
-            // 
-            this.txtDonGia.Location = new System.Drawing.Point(593, 388);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(145, 31);
-            this.txtDonGia.TabIndex = 28;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(799, 338);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(131, 25);
-            this.label18.TabIndex = 16;
-            this.label18.Text = "Khuyến mãi:";
-            // 
-            // txtKM
-            // 
-            this.txtKM.Location = new System.Drawing.Point(936, 338);
-            this.txtKM.Name = "txtKM";
-            this.txtKM.Size = new System.Drawing.Size(145, 31);
-            this.txtKM.TabIndex = 28;
-            // 
-            // banGiayDataSet1
-            // 
-            this.banGiayDataSet1.DataSetName = "BanGiayDataSet1";
-            this.banGiayDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sANPHAMBindingSource
-            // 
-            this.sANPHAMBindingSource.DataMember = "SANPHAM";
-            this.sANPHAMBindingSource.DataSource = this.banGiayDataSet1;
-            // 
-            // sANPHAMTableAdapter
-            // 
-            this.sANPHAMTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tENSPDataGridViewTextBoxColumn
             // 
@@ -609,6 +532,84 @@
             this.mASPDataGridViewTextBoxColumn.Name = "mASPDataGridViewTextBoxColumn";
             this.mASPDataGridViewTextBoxColumn.Width = 200;
             // 
+            // sANPHAMBindingSource
+            // 
+            this.sANPHAMBindingSource.DataMember = "SANPHAM";
+            this.sANPHAMBindingSource.DataSource = this.banGiayDataSet1;
+            // 
+            // banGiayDataSet1
+            // 
+            this.banGiayDataSet1.DataSetName = "BanGiayDataSet1";
+            this.banGiayDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txtXuatXu
+            // 
+            this.txtXuatXu.AutoSize = true;
+            this.txtXuatXu.Location = new System.Drawing.Point(839, 288);
+            this.txtXuatXu.Name = "txtXuatXu";
+            this.txtXuatXu.Size = new System.Drawing.Size(91, 25);
+            this.txtXuatXu.TabIndex = 19;
+            this.txtXuatXu.Text = "Xuất xứ:";
+            // 
+            // txtXuattXu
+            // 
+            this.txtXuattXu.Location = new System.Drawing.Point(936, 289);
+            this.txtXuattXu.Name = "txtXuattXu";
+            this.txtXuattXu.Size = new System.Drawing.Size(145, 31);
+            this.txtXuattXu.TabIndex = 29;
+            // 
+            // txtSize
+            // 
+            this.txtSize.AutoSize = true;
+            this.txtSize.Location = new System.Drawing.Point(191, 388);
+            this.txtSize.Name = "txtSize";
+            this.txtSize.Size = new System.Drawing.Size(60, 25);
+            this.txtSize.TabIndex = 16;
+            this.txtSize.Text = "Size:";
+            // 
+            // txtSize1
+            // 
+            this.txtSize1.Location = new System.Drawing.Point(257, 385);
+            this.txtSize1.Name = "txtSize1";
+            this.txtSize1.Size = new System.Drawing.Size(145, 31);
+            this.txtSize1.TabIndex = 28;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(485, 388);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 25);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Đơn giá:";
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Location = new System.Drawing.Point(593, 388);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(145, 31);
+            this.txtDonGia.TabIndex = 28;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(799, 338);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(131, 25);
+            this.label18.TabIndex = 16;
+            this.label18.Text = "Khuyến mãi:";
+            // 
+            // txtKM
+            // 
+            this.txtKM.Location = new System.Drawing.Point(936, 338);
+            this.txtKM.Name = "txtKM";
+            this.txtKM.Size = new System.Drawing.Size(145, 31);
+            this.txtKM.TabIndex = 28;
+            // 
+            // sANPHAMTableAdapter
+            // 
+            this.sANPHAMTableAdapter.ClearBeforeFill = true;
+            // 
             // QuanLyKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -660,8 +661,8 @@
             this.Text = "QuanLyKho";
             this.Load += new System.EventHandler(this.QuanLyKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

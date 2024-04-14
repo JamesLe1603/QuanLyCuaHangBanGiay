@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
 
 namespace DoAn
 {
@@ -24,13 +25,14 @@ namespace DoAn
         {
 
         }
-        public SqlConnection createConn()
-        {
-            string conn;
-            conn = "Data Source=.;Initial Catalog=BanGiay;Integrated Security=True";
-            SqlConnection SqlConn = new SqlConnection(conn);
-            return SqlConn;
-        }
+        //ket noi
+        //public SqlConnection createConn()
+        //{
+        //    string conn;
+        //    conn = "Data Source=.;Initial Catalog=BanGiay;Integrated Security=True";
+        //    SqlConnection SqlConn = new SqlConnection(conn);
+        //    return SqlConn;
+        //}
         private void btnOut_Click(object sender, EventArgs e)
         {
             
@@ -40,9 +42,11 @@ namespace DoAn
             string inputString = Regex.Replace(str.Trim(), @"\s+", " ");
             return inputString;
         }
+        //truy xuat
         public void DisplayData(String sSql)
         {
-            SqlConnection myConn = createConn();
+
+            SqlConnection myConn = DataAcess.GetConnection();
             try
             {
                 myConn.Open();
@@ -63,14 +67,14 @@ namespace DoAn
         public void FindAll()
         {
             string sSql;
-            sSql = "Select * from NhaCungCap";
+            sSql = "Select * from SanPham";
             DisplayData(sSql);
         }
-
+        //button them
         [Obsolete]
         private void btnAdd_Click(object sender, EventArgs e)
         {//,XUATXU,GIANHAP,GIABAN,DONVITINH,SOLUONG,DONGIA,HINHANH,KHUYENMAI,TRANGTHAIBAN,MANCC
-            SqlConnection myconnection = createConn();
+            SqlConnection myconnection = DataAcess.GetConnection();
 
             double gianhap = double.Parse(txtGiaNhap.Text.ToString());
             double giaban = double.Parse(txtGiaBan.Text.ToString());
@@ -110,9 +114,10 @@ namespace DoAn
                 MessageBox.Show(ex.Message);    
             }
         }
+        //xoa sp
         public void DeleteProduct()
         {
-            SqlConnection myConn = createConn();
+            SqlConnection myConn = DataAcess.GetConnection();
 
             try
             {
@@ -143,9 +148,11 @@ namespace DoAn
                 MessageBox.Show(ex.Message);
             }
         }
+        //sua sp
         public void editProduct()
         {
-            SqlConnection myConn = createConn();
+            //test thoi nha chu khong phai de day
+            SqlConnection myConn = DataAcess.GetConnection();
             int tt = 0;
             double gianhap = double.Parse(txtGiaNhap.Text);
             double giaban = double.Parse(txtGiaBan.Text);
@@ -194,6 +201,7 @@ namespace DoAn
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -252,6 +260,11 @@ namespace DoAn
         private void btnFindx_Click(object sender, EventArgs e)
         {
             FindAll();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
