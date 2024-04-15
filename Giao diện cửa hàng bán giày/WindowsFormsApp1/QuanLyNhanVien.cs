@@ -31,7 +31,6 @@ namespace DoAn
             string conn;
             conn = "Data Source=MSI\\SQLEXPRESS;Initial Catalog=banGiay;Integrated Security=True";
             SqlConnection sqlConn = new SqlConnection(conn);
-
             return sqlConn;
         }
 

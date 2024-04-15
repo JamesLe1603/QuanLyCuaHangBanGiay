@@ -65,29 +65,29 @@
             this.chkTT = new System.Windows.Forms.CheckBox();
             this.cboLoai = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tENSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xUATXUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gIANHAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gIABANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dONVITINHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sOLUONGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dONGIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kHUYENMAIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tRANGTHAIBANDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mANCCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sIZEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mASPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.banGiayDataSet1 = new DoAn.BanGiayDataSet1();
-            this.txtXuatXu = new System.Windows.Forms.Label();
-            this.txtXuattXu = new System.Windows.Forms.TextBox();
-            this.txtSize = new System.Windows.Forms.Label();
-            this.txtSize1 = new System.Windows.Forms.TextBox();
+            this.LabelXX = new System.Windows.Forms.Label();
+            this.txtXuatXu = new System.Windows.Forms.TextBox();
+            this.LabelSize = new System.Windows.Forms.Label();
+            this.txtSize = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtKM = new System.Windows.Forms.TextBox();
             this.sANPHAMTableAdapter = new DoAn.BanGiayDataSet1TableAdapters.SANPHAMTableAdapter();
+            this.colTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colXuatXu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTT = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colMaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet1)).BeginInit();
@@ -325,6 +325,7 @@
             this.label8.Size = new System.Drawing.Size(66, 25);
             this.label8.TabIndex = 20;
             this.label8.Text = "Thêm";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label1
             // 
@@ -414,18 +415,18 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tENSPDataGridViewTextBoxColumn,
-            this.xUATXUDataGridViewTextBoxColumn,
-            this.gIANHAPDataGridViewTextBoxColumn,
-            this.gIABANDataGridViewTextBoxColumn,
-            this.dONVITINHDataGridViewTextBoxColumn,
-            this.sOLUONGDataGridViewTextBoxColumn,
-            this.dONGIADataGridViewTextBoxColumn,
-            this.kHUYENMAIDataGridViewTextBoxColumn,
-            this.tRANGTHAIBANDataGridViewCheckBoxColumn,
-            this.mANCCDataGridViewTextBoxColumn,
-            this.sIZEDataGridViewTextBoxColumn,
-            this.mASPDataGridViewTextBoxColumn});
+            this.colTenSP,
+            this.colXuatXu,
+            this.colGiaNhap,
+            this.colGiaBan,
+            this.colDVT,
+            this.colSL,
+            this.colDonGia,
+            this.colKhuyenMai,
+            this.colTT,
+            this.colMaNCC,
+            this.colSize,
+            this.colMaSP});
             this.dataGridView1.DataSource = this.sANPHAMBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(70, 497);
             this.dataGridView1.Name = "dataGridView1";
@@ -435,102 +436,6 @@
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // tENSPDataGridViewTextBoxColumn
-            // 
-            this.tENSPDataGridViewTextBoxColumn.DataPropertyName = "TENSP";
-            this.tENSPDataGridViewTextBoxColumn.HeaderText = "TENSP";
-            this.tENSPDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.tENSPDataGridViewTextBoxColumn.Name = "tENSPDataGridViewTextBoxColumn";
-            this.tENSPDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // xUATXUDataGridViewTextBoxColumn
-            // 
-            this.xUATXUDataGridViewTextBoxColumn.DataPropertyName = "XUATXU";
-            this.xUATXUDataGridViewTextBoxColumn.HeaderText = "XUATXU";
-            this.xUATXUDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.xUATXUDataGridViewTextBoxColumn.Name = "xUATXUDataGridViewTextBoxColumn";
-            this.xUATXUDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // gIANHAPDataGridViewTextBoxColumn
-            // 
-            this.gIANHAPDataGridViewTextBoxColumn.DataPropertyName = "GIANHAP";
-            this.gIANHAPDataGridViewTextBoxColumn.HeaderText = "GIANHAP";
-            this.gIANHAPDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.gIANHAPDataGridViewTextBoxColumn.Name = "gIANHAPDataGridViewTextBoxColumn";
-            this.gIANHAPDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // gIABANDataGridViewTextBoxColumn
-            // 
-            this.gIABANDataGridViewTextBoxColumn.DataPropertyName = "GIABAN";
-            this.gIABANDataGridViewTextBoxColumn.HeaderText = "GIABAN";
-            this.gIABANDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.gIABANDataGridViewTextBoxColumn.Name = "gIABANDataGridViewTextBoxColumn";
-            this.gIABANDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // dONVITINHDataGridViewTextBoxColumn
-            // 
-            this.dONVITINHDataGridViewTextBoxColumn.DataPropertyName = "DONVITINH";
-            this.dONVITINHDataGridViewTextBoxColumn.HeaderText = "DONVITINH";
-            this.dONVITINHDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.dONVITINHDataGridViewTextBoxColumn.Name = "dONVITINHDataGridViewTextBoxColumn";
-            this.dONVITINHDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // sOLUONGDataGridViewTextBoxColumn
-            // 
-            this.sOLUONGDataGridViewTextBoxColumn.DataPropertyName = "SOLUONG";
-            this.sOLUONGDataGridViewTextBoxColumn.HeaderText = "SOLUONG";
-            this.sOLUONGDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.sOLUONGDataGridViewTextBoxColumn.Name = "sOLUONGDataGridViewTextBoxColumn";
-            this.sOLUONGDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // dONGIADataGridViewTextBoxColumn
-            // 
-            this.dONGIADataGridViewTextBoxColumn.DataPropertyName = "DONGIA";
-            this.dONGIADataGridViewTextBoxColumn.HeaderText = "DONGIA";
-            this.dONGIADataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.dONGIADataGridViewTextBoxColumn.Name = "dONGIADataGridViewTextBoxColumn";
-            this.dONGIADataGridViewTextBoxColumn.Width = 200;
-            // 
-            // kHUYENMAIDataGridViewTextBoxColumn
-            // 
-            this.kHUYENMAIDataGridViewTextBoxColumn.DataPropertyName = "KHUYENMAI";
-            this.kHUYENMAIDataGridViewTextBoxColumn.HeaderText = "KHUYENMAI";
-            this.kHUYENMAIDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.kHUYENMAIDataGridViewTextBoxColumn.Name = "kHUYENMAIDataGridViewTextBoxColumn";
-            this.kHUYENMAIDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // tRANGTHAIBANDataGridViewCheckBoxColumn
-            // 
-            this.tRANGTHAIBANDataGridViewCheckBoxColumn.DataPropertyName = "TRANGTHAIBAN";
-            this.tRANGTHAIBANDataGridViewCheckBoxColumn.HeaderText = "TRANGTHAIBAN";
-            this.tRANGTHAIBANDataGridViewCheckBoxColumn.MinimumWidth = 10;
-            this.tRANGTHAIBANDataGridViewCheckBoxColumn.Name = "tRANGTHAIBANDataGridViewCheckBoxColumn";
-            this.tRANGTHAIBANDataGridViewCheckBoxColumn.Width = 200;
-            // 
-            // mANCCDataGridViewTextBoxColumn
-            // 
-            this.mANCCDataGridViewTextBoxColumn.DataPropertyName = "MANCC";
-            this.mANCCDataGridViewTextBoxColumn.HeaderText = "MANCC";
-            this.mANCCDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.mANCCDataGridViewTextBoxColumn.Name = "mANCCDataGridViewTextBoxColumn";
-            this.mANCCDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // sIZEDataGridViewTextBoxColumn
-            // 
-            this.sIZEDataGridViewTextBoxColumn.DataPropertyName = "SIZE";
-            this.sIZEDataGridViewTextBoxColumn.HeaderText = "SIZE";
-            this.sIZEDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.sIZEDataGridViewTextBoxColumn.Name = "sIZEDataGridViewTextBoxColumn";
-            this.sIZEDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // mASPDataGridViewTextBoxColumn
-            // 
-            this.mASPDataGridViewTextBoxColumn.DataPropertyName = "MASP";
-            this.mASPDataGridViewTextBoxColumn.HeaderText = "MASP";
-            this.mASPDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.mASPDataGridViewTextBoxColumn.Name = "mASPDataGridViewTextBoxColumn";
-            this.mASPDataGridViewTextBoxColumn.Width = 200;
             // 
             // sANPHAMBindingSource
             // 
@@ -542,37 +447,37 @@
             this.banGiayDataSet1.DataSetName = "BanGiayDataSet1";
             this.banGiayDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // LabelXX
+            // 
+            this.LabelXX.AutoSize = true;
+            this.LabelXX.Location = new System.Drawing.Point(839, 288);
+            this.LabelXX.Name = "LabelXX";
+            this.LabelXX.Size = new System.Drawing.Size(91, 25);
+            this.LabelXX.TabIndex = 19;
+            this.LabelXX.Text = "Xuất xứ:";
+            // 
             // txtXuatXu
             // 
-            this.txtXuatXu.AutoSize = true;
-            this.txtXuatXu.Location = new System.Drawing.Point(839, 288);
+            this.txtXuatXu.Location = new System.Drawing.Point(936, 289);
             this.txtXuatXu.Name = "txtXuatXu";
-            this.txtXuatXu.Size = new System.Drawing.Size(91, 25);
-            this.txtXuatXu.TabIndex = 19;
-            this.txtXuatXu.Text = "Xuất xứ:";
+            this.txtXuatXu.Size = new System.Drawing.Size(145, 31);
+            this.txtXuatXu.TabIndex = 29;
             // 
-            // txtXuattXu
+            // LabelSize
             // 
-            this.txtXuattXu.Location = new System.Drawing.Point(936, 289);
-            this.txtXuattXu.Name = "txtXuattXu";
-            this.txtXuattXu.Size = new System.Drawing.Size(145, 31);
-            this.txtXuattXu.TabIndex = 29;
+            this.LabelSize.AutoSize = true;
+            this.LabelSize.Location = new System.Drawing.Point(191, 388);
+            this.LabelSize.Name = "LabelSize";
+            this.LabelSize.Size = new System.Drawing.Size(60, 25);
+            this.LabelSize.TabIndex = 16;
+            this.LabelSize.Text = "Size:";
             // 
             // txtSize
             // 
-            this.txtSize.AutoSize = true;
-            this.txtSize.Location = new System.Drawing.Point(191, 388);
+            this.txtSize.Location = new System.Drawing.Point(257, 385);
             this.txtSize.Name = "txtSize";
-            this.txtSize.Size = new System.Drawing.Size(60, 25);
-            this.txtSize.TabIndex = 16;
-            this.txtSize.Text = "Size:";
-            // 
-            // txtSize1
-            // 
-            this.txtSize1.Location = new System.Drawing.Point(257, 385);
-            this.txtSize1.Name = "txtSize1";
-            this.txtSize1.Size = new System.Drawing.Size(145, 31);
-            this.txtSize1.TabIndex = 28;
+            this.txtSize.Size = new System.Drawing.Size(145, 31);
+            this.txtSize.TabIndex = 28;
             // 
             // label17
             // 
@@ -610,6 +515,102 @@
             // 
             this.sANPHAMTableAdapter.ClearBeforeFill = true;
             // 
+            // colTenSP
+            // 
+            this.colTenSP.DataPropertyName = "TENSP";
+            this.colTenSP.HeaderText = "TENSP";
+            this.colTenSP.MinimumWidth = 10;
+            this.colTenSP.Name = "colTenSP";
+            this.colTenSP.Width = 200;
+            // 
+            // colXuatXu
+            // 
+            this.colXuatXu.DataPropertyName = "XUATXU";
+            this.colXuatXu.HeaderText = "XUATXU";
+            this.colXuatXu.MinimumWidth = 10;
+            this.colXuatXu.Name = "colXuatXu";
+            this.colXuatXu.Width = 200;
+            // 
+            // colGiaNhap
+            // 
+            this.colGiaNhap.DataPropertyName = "GIANHAP";
+            this.colGiaNhap.HeaderText = "GIANHAP";
+            this.colGiaNhap.MinimumWidth = 10;
+            this.colGiaNhap.Name = "colGiaNhap";
+            this.colGiaNhap.Width = 200;
+            // 
+            // colGiaBan
+            // 
+            this.colGiaBan.DataPropertyName = "GIABAN";
+            this.colGiaBan.HeaderText = "GIABAN";
+            this.colGiaBan.MinimumWidth = 10;
+            this.colGiaBan.Name = "colGiaBan";
+            this.colGiaBan.Width = 200;
+            // 
+            // colDVT
+            // 
+            this.colDVT.DataPropertyName = "DONVITINH";
+            this.colDVT.HeaderText = "DONVITINH";
+            this.colDVT.MinimumWidth = 10;
+            this.colDVT.Name = "colDVT";
+            this.colDVT.Width = 200;
+            // 
+            // colSL
+            // 
+            this.colSL.DataPropertyName = "SOLUONG";
+            this.colSL.HeaderText = "SOLUONG";
+            this.colSL.MinimumWidth = 10;
+            this.colSL.Name = "colSL";
+            this.colSL.Width = 200;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.DataPropertyName = "DONGIA";
+            this.colDonGia.HeaderText = "DONGIA";
+            this.colDonGia.MinimumWidth = 10;
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Width = 200;
+            // 
+            // colKhuyenMai
+            // 
+            this.colKhuyenMai.DataPropertyName = "KHUYENMAI";
+            this.colKhuyenMai.HeaderText = "KHUYENMAI";
+            this.colKhuyenMai.MinimumWidth = 10;
+            this.colKhuyenMai.Name = "colKhuyenMai";
+            this.colKhuyenMai.Width = 200;
+            // 
+            // colTT
+            // 
+            this.colTT.DataPropertyName = "TRANGTHAIBAN";
+            this.colTT.HeaderText = "TRANGTHAIBAN";
+            this.colTT.MinimumWidth = 10;
+            this.colTT.Name = "colTT";
+            this.colTT.Width = 200;
+            // 
+            // colMaNCC
+            // 
+            this.colMaNCC.DataPropertyName = "MANCC";
+            this.colMaNCC.HeaderText = "MANCC";
+            this.colMaNCC.MinimumWidth = 10;
+            this.colMaNCC.Name = "colMaNCC";
+            this.colMaNCC.Width = 200;
+            // 
+            // colSize
+            // 
+            this.colSize.DataPropertyName = "SIZE";
+            this.colSize.HeaderText = "SIZE";
+            this.colSize.MinimumWidth = 10;
+            this.colSize.Name = "colSize";
+            this.colSize.Width = 200;
+            // 
+            // colMaSP
+            // 
+            this.colMaSP.DataPropertyName = "MASP";
+            this.colMaSP.HeaderText = "MASP";
+            this.colMaSP.MinimumWidth = 10;
+            this.colMaSP.Name = "colMaSP";
+            this.colMaSP.Width = 200;
+            // 
             // QuanLyKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -623,13 +624,13 @@
             this.Controls.Add(this.txtFind);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtGiaNhap);
-            this.Controls.Add(this.txtXuattXu);
+            this.Controls.Add(this.txtXuatXu);
             this.Controls.Add(this.txtNCC);
             this.Controls.Add(this.txtGiaBan);
             this.Controls.Add(this.txtKM);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.txtSL);
-            this.Controls.Add(this.txtSize1);
+            this.Controls.Add(this.txtSize);
             this.Controls.Add(this.txtDVT);
             this.Controls.Add(this.txtTenSP);
             this.Controls.Add(this.txtMaSP);
@@ -639,7 +640,7 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtXuatXu);
+            this.Controls.Add(this.LabelXX);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -647,7 +648,7 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.txtSize);
+            this.Controls.Add(this.LabelSize);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label13);
@@ -705,10 +706,10 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ComboBox cboLoai;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label txtXuatXu;
-        private System.Windows.Forms.TextBox txtXuattXu;
-        private System.Windows.Forms.Label txtSize;
-        private System.Windows.Forms.TextBox txtSize1;
+        private System.Windows.Forms.Label LabelXX;
+        private System.Windows.Forms.TextBox txtXuatXu;
+        private System.Windows.Forms.Label LabelSize;
+        private System.Windows.Forms.TextBox txtSize;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Label label18;
@@ -716,17 +717,17 @@
         private BanGiayDataSet1 banGiayDataSet1;
         private System.Windows.Forms.BindingSource sANPHAMBindingSource;
         private BanGiayDataSet1TableAdapters.SANPHAMTableAdapter sANPHAMTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tENSPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn xUATXUDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gIANHAPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gIABANDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dONVITINHDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sOLUONGDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dONGIADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kHUYENMAIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn tRANGTHAIBANDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mANCCDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sIZEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mASPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colXuatXu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGiaNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGiaBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDVT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colKhuyenMai;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colTT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaSP;
     }
 }

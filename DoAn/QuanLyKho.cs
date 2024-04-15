@@ -20,7 +20,6 @@ namespace DoAn
         {
             InitializeComponent();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -75,44 +74,51 @@ namespace DoAn
         private void btnAdd_Click(object sender, EventArgs e)
         {//,XUATXU,GIANHAP,GIABAN,DONVITINH,SOLUONG,DONGIA,HINHANH,KHUYENMAI,TRANGTHAIBAN,MANCC
             SqlConnection myconnection = DataAcess.GetConnection();
-
-            double gianhap = double.Parse(txtGiaNhap.Text.ToString());
-            double giaban = double.Parse(txtGiaBan.Text.ToString());
-            int sl = int.Parse(txtSL.Text);
-            double dongia = double.Parse(txtDonGia.Text.ToString());
-            int km = int.Parse(txtKM.Text);
-            int size = int.Parse(txtSize1.Text);
-            int MaNCC = int.Parse(txtNCC.Text);
-            try
+            if(string.IsNullOrWhiteSpace(txtMaSP.Text)||string.IsNullOrWhiteSpace(txtTenSP.Text)||string.IsNullOrWhiteSpace(txtDonGia.Text)||string.IsNullOrWhiteSpace(txtGiaBan.Text)|| string.IsNullOrWhiteSpace(txtGiaNhap.Text) || string.IsNullOrWhiteSpace(txtSize.Text) || string.IsNullOrWhiteSpace(txtNCC.Text) || string.IsNullOrWhiteSpace(txtXuatXu.Text) || string.IsNullOrWhiteSpace(txtKM.Text))
             {
-                myconnection.Open();
-                string sqlInsert = "insert into SanPham" +
-               " (MASP,TENSP,XUATXU,GIANHAP,GIABAN,DONVITINH,SOLUONG,DONGIA,KHUYENMAI,TRANGTHAIBAN,MANCC,SIZE) " +
-               "VALUES(@MASP,@TENSP,@XX,@GIANHAP,@GIABAN,@DVT,@SL,@GIA,@KM,@TTBAN,@MANCC,@SIZE)";
-                SqlCommand cmd = new SqlCommand(sqlInsert, myconnection);
-                cmd.Parameters.Add("@MASP", "0");
-                cmd.Parameters.Add("@TENSP", XoaKhoangTrang(txtTenSP.Text));
-                cmd.Parameters.Add("@XX", XoaKhoangTrang(txtXuattXu.Text));
-                cmd.Parameters.Add("@GIANHAP", gianhap);
-                cmd.Parameters.Add("@GIABAN", giaban);
-                cmd.Parameters.Add("@DVT", txtDVT.Text);
-                cmd.Parameters.Add("@SL", sl);
-                cmd.Parameters.Add("@GIA", dongia);
-                cmd.Parameters.Add("@KM", km);
-                cmd.Parameters.Add("@TTBAN", chkTT.Checked);
-                cmd.Parameters.Add("@MANCC", MaNCC);
-                cmd.Parameters.Add("@SIZE", size);
-                cmd.ExecuteNonQuery();
-
-
-                myconnection.Close();
-                MessageBox.Show("Thêm thành công");
-                FindAll();
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!","Lỗi",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);    
+                double gianhap = double.Parse(txtGiaNhap.Text.ToString());
+                double giaban = double.Parse(txtGiaBan.Text.ToString());
+                int sl = int.Parse(txtSL.Text);
+                double dongia = double.Parse(txtDonGia.Text.ToString());
+                int km = int.Parse(txtKM.Text);
+                int size = int.Parse(txtSize.Text);
+                int MaNCC = int.Parse(txtNCC.Text);
+                try
+                {
+                    myconnection.Open();
+                    string sqlInsert = "insert into SanPham" +
+                   " (MASP,TENSP,XUATXU,GIANHAP,GIABAN,DONVITINH,SOLUONG,DONGIA,KHUYENMAI,TRANGTHAIBAN,MANCC,SIZE) " +
+                   "VALUES(@MASP,@TENSP,@XX,@GIANHAP,@GIABAN,@DVT,@SL,@GIA,@KM,@TTBAN,@MANCC,@SIZE)";
+                    SqlCommand cmd = new SqlCommand(sqlInsert, myconnection);
+                    cmd.Parameters.Add("@MASP", "0");
+                    cmd.Parameters.Add("@TENSP", XoaKhoangTrang(txtTenSP.Text));
+                    cmd.Parameters.Add("@XX", XoaKhoangTrang(txtXuatXu.Text));
+                    cmd.Parameters.Add("@GIANHAP", gianhap);
+                    cmd.Parameters.Add("@GIABAN", giaban);
+                    cmd.Parameters.Add("@DVT", txtDVT.Text);
+                    cmd.Parameters.Add("@SL", sl);
+                    cmd.Parameters.Add("@GIA", dongia);
+                    cmd.Parameters.Add("@KM", km);
+                    cmd.Parameters.Add("@TTBAN", chkTT.Checked);
+                    cmd.Parameters.Add("@MANCC", MaNCC);
+                    cmd.Parameters.Add("@SIZE", size);
+                    cmd.ExecuteNonQuery();
+
+
+                    myconnection.Close();
+                    MessageBox.Show("Thêm thành công");
+                    FindAll();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+            
         }
         //xoa sp
         public void DeleteProduct()
@@ -129,7 +135,7 @@ namespace DoAn
                 MessageBox.Show("Xóa thành công");
                 txtMaSP.Clear();
                 txtTenSP.Clear();
-                txtXuattXu.Clear();
+                txtXuatXu.Clear();
                 txtNCC.Clear();
                 chkTT.Checked = false;
                 txtDonGia.Clear();
@@ -137,7 +143,7 @@ namespace DoAn
                 txtGiaBan.Clear();
                 txtGiaNhap.Clear();
                 txtKM.Clear();
-                txtSize1.Clear();
+                txtSize.Clear();
                 txtSL.Clear();
                 
 
@@ -159,7 +165,7 @@ namespace DoAn
             int sl = int.Parse(txtSL.Text);
             double dongia = double.Parse(txtDonGia.Text);
             int km = int.Parse(txtKM.Text);
-            int size = int.Parse(txtSize1.Text);
+            int size = int.Parse(txtSize.Text);
             int MaNCC = int.Parse(txtNCC.Text);
             try
             {
@@ -172,7 +178,7 @@ namespace DoAn
                 string sSQL = "UPDATE SANPHAM SET " +
 
                     "TENSP = N'" + XoaKhoangTrang(txtTenSP.Text) +
-                    "',XUATXU = N'" + XoaKhoangTrang(txtXuattXu.Text) +
+                    "',XUATXU = N'" + XoaKhoangTrang(txtXuatXu.Text) +
                     "',GIANHAP = " + gianhap +
                     ",GIABAN = " + giaban +
                     ",DONVITINH = '" + txtDVT.Text +
@@ -194,7 +200,6 @@ namespace DoAn
                 MessageBox.Show("Sửa thành công!");
                 FindAll();
                 //sqlCommand.Parameters.AddWithValue();
-
             }
             catch (Exception ex)
             {
@@ -215,7 +220,7 @@ namespace DoAn
                 String dvt = row.Cells["colDVT"].Value.ToString();
                 int sl = (int)row.Cells["colSL"].Value;
                 double dongia = Double.Parse(row.Cells["colDonGia"].Value.ToString());
-                int km = (int)row.Cells["colKM"].Value;
+                int km = (int)row.Cells["colKhuyenMai"].Value;
                 bool tt = (bool)row.Cells["colTT"].Value;
                 int mancc = (int)row.Cells["colMaNCC"].Value;
                 int size = (int)row.Cells["colSize"].Value;
@@ -223,7 +228,7 @@ namespace DoAn
 
                 txtMaSP.Text = MaSP.ToString();
                 txtTenSP.Text = TenSP;
-                txtXuattXu.Text = XuatXu;
+                txtXuatXu.Text = XuatXu;
                 txtGiaNhap.Text = GiaNhap.ToString();
                 txtGiaBan.Text = GiaBan.ToString();
                 txtDVT.Text = dvt;
@@ -263,6 +268,11 @@ namespace DoAn
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
