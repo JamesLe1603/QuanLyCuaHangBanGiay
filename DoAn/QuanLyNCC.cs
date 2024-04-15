@@ -58,7 +58,7 @@ namespace DoAn
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SqlConnection myConn = createConn();
-            if (string.IsNullOrWhiteSpace(txtMaNCC.Text) || string.IsNullOrWhiteSpace(txtTenNCC.Text) || string.IsNullOrWhiteSpace(txtDT.Text) || string.IsNullOrWhiteSpace(txtDiaChi.Text) )
+            if ( string.IsNullOrWhiteSpace(txtTenNCC.Text) || string.IsNullOrWhiteSpace(txtDT.Text) || string.IsNullOrWhiteSpace(txtDiaChi.Text) )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             }

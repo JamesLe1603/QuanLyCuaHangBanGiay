@@ -101,13 +101,13 @@ namespace DoAn
             findCustomerWithInput();
         }
 
-        private void GiaoDienAD_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'banGiayDataSet1.KHACHHANG' table. You can move, or remove it, as needed.
-            this.kHACHHANGTableAdapter.Fill(this.banGiayDataSet1.KHACHHANG);
-            cbo_danhMuc.SelectedIndex = 0;
-            grid_dsKhachHang.AllowUserToAddRows = false;
-        }
+        //private void GiaoDienAD_Load(object sender, EventArgs e)
+        //{
+        //    // TODO: This line of code loads data into the 'banGiayDataSet1.KHACHHANG' table. You can move, or remove it, as needed.
+        //    this.kHACHHANGTableAdapter.Fill(this.banGiayDataSet1.KHACHHANG);
+        //    cbo_danhMuc.SelectedIndex = 0;
+        //    grid_dsKhachHang.AllowUserToAddRows = false;
+        //}
 
         // Thêm thông tin khách hàng
         [Obsolete]
@@ -334,6 +334,11 @@ namespace DoAn
         }
 
         private void grid_dsKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txt_maKH_TextChanged(object sender, EventArgs e)
         {
 
         }

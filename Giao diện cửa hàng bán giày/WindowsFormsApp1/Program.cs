@@ -21,8 +21,8 @@ namespace WindowsFormsApp1
             //Application.Run(new Form1());
             //Application.Run(new GiaoDienDoanhThu());
             //Application.Run(new GiaoDienQuanLyKhachHangChoNhanVien());
-            //Application.Run(new GiaoDienAD());
-            Application.Run(new QuanLyNhanVien());
+            Application.Run(new GiaoDienAD());
+            //Application.Run(new QuanLyNhanVien());
         }
     }
 }

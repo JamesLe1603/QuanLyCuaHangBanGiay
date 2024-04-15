@@ -74,7 +74,7 @@ namespace DoAn
         private void btnAdd_Click(object sender, EventArgs e)
         {//,XUATXU,GIANHAP,GIABAN,DONVITINH,SOLUONG,DONGIA,HINHANH,KHUYENMAI,TRANGTHAIBAN,MANCC
             SqlConnection myconnection = DataAcess.GetConnection();
-            if(string.IsNullOrWhiteSpace(txtMaSP.Text)||string.IsNullOrWhiteSpace(txtTenSP.Text)||string.IsNullOrWhiteSpace(txtDonGia.Text)||string.IsNullOrWhiteSpace(txtGiaBan.Text)|| string.IsNullOrWhiteSpace(txtGiaNhap.Text) || string.IsNullOrWhiteSpace(txtSize.Text) || string.IsNullOrWhiteSpace(txtNCC.Text) || string.IsNullOrWhiteSpace(txtXuatXu.Text) || string.IsNullOrWhiteSpace(txtKM.Text))
+            if(string.IsNullOrWhiteSpace(txtTenSP.Text)||string.IsNullOrWhiteSpace(txtDonGia.Text)||string.IsNullOrWhiteSpace(txtGiaBan.Text)|| string.IsNullOrWhiteSpace(txtGiaNhap.Text) || string.IsNullOrWhiteSpace(txtSize.Text) || string.IsNullOrWhiteSpace(txtNCC.Text) || string.IsNullOrWhiteSpace(txtXuatXu.Text) || string.IsNullOrWhiteSpace(txtKM.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!","Lỗi",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
             }

@@ -227,5 +227,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void txt_maKH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

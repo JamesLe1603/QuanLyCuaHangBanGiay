@@ -215,5 +215,10 @@ namespace DoAn
         {
 
         }
+
+        private void txt_SDT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

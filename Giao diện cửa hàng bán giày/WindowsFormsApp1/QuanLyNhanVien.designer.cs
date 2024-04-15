@@ -51,6 +51,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grid_dsNhanVien = new System.Windows.Forms.DataGridView();
+            this.banGiayDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.banGiayDataSet2 = new WindowsFormsApp1.banGiayDataSet2();
             this.txt_luong = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_password = new System.Windows.Forms.TextBox();
@@ -63,14 +65,12 @@
             this.label17 = new System.Windows.Forms.Label();
             this.chk_trangThai = new System.Windows.Forms.CheckBox();
             this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.banGiayDataSet2 = new WindowsFormsApp1.banGiayDataSet2();
             this.nHANVIENTableAdapter = new WindowsFormsApp1.banGiayDataSet2TableAdapters.NHANVIENTableAdapter();
-            this.banGiayDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grid_dsNhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -137,6 +137,7 @@
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(360, 50);
             this.txt_SDT.TabIndex = 29;
+            this.txt_SDT.TextChanged += new System.EventHandler(this.txt_SDT_TextChanged);
             this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_luong_KeyPress);
             // 
             // txt_tenNV
@@ -279,6 +280,16 @@
             this.grid_dsNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_dsNhanVien_CellClick);
             this.grid_dsNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_dsNhanVien_CellContentClick);
             // 
+            // banGiayDataSet2BindingSource
+            // 
+            this.banGiayDataSet2BindingSource.DataSource = this.banGiayDataSet2;
+            this.banGiayDataSet2BindingSource.Position = 0;
+            // 
+            // banGiayDataSet2
+            // 
+            this.banGiayDataSet2.DataSetName = "banGiayDataSet2";
+            this.banGiayDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txt_luong
             // 
             this.txt_luong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -399,19 +410,9 @@
             this.nHANVIENBindingSource.DataMember = "NHANVIEN";
             this.nHANVIENBindingSource.DataSource = this.banGiayDataSet2;
             // 
-            // banGiayDataSet2
-            // 
-            this.banGiayDataSet2.DataSetName = "banGiayDataSet2";
-            this.banGiayDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // nHANVIENTableAdapter
             // 
             this.nHANVIENTableAdapter.ClearBeforeFill = true;
-            // 
-            // banGiayDataSet2BindingSource
-            // 
-            this.banGiayDataSet2BindingSource.DataSource = this.banGiayDataSet2;
-            this.banGiayDataSet2BindingSource.Position = 0;
             // 
             // QuanLyNhanVien
             // 
@@ -452,11 +453,11 @@
             this.Text = "QuanLyNhanVien";
             this.Load += new System.EventHandler(this.QuanLyNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_dsNhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

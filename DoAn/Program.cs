@@ -22,8 +22,8 @@ namespace DoAn
             //Application.Run(new Order());
             //Application.Run(new NhanVien());
             //Application.Run(new DienThongTin());
-            Application.Run(new QuanLyNCC());
-            //Application.Run(new QuanLyKho());
+            //Application.Run(new QuanLyNCC());
+            Application.Run(new QuanLyKho());
 
         }
     }

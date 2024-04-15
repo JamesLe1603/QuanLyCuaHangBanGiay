@@ -87,6 +87,7 @@
             this.txt_maKH.Name = "txt_maKH";
             this.txt_maKH.Size = new System.Drawing.Size(414, 51);
             this.txt_maKH.TabIndex = 1;
+            this.txt_maKH.TextChanged += new System.EventHandler(this.txt_maKH_TextChanged);
             this.txt_maKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_maKH_KeyPress);
             // 
             // label1

@@ -57,16 +57,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nHACUNGCAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.banGiayDataSet = new DoAn.BanGiayDataSet();
-            this.chkTT = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.nHACUNGCAPTableAdapter = new DoAn.BanGiayDataSetTableAdapters.NHACUNGCAPTableAdapter();
             this.colTenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nHACUNGCAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.banGiayDataSet = new DoAn.BanGiayDataSet();
+            this.chkTT = new System.Windows.Forms.CheckBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.nHACUNGCAPTableAdapter = new DoAn.BanGiayDataSetTableAdapters.NHACUNGCAPTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHACUNGCAPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet)).BeginInit();
@@ -148,8 +148,10 @@
             // 
             // txtMaNCC
             // 
+            this.txtMaNCC.Enabled = false;
             this.txtMaNCC.Location = new System.Drawing.Point(373, 282);
             this.txtMaNCC.Name = "txtMaNCC";
+            this.txtMaNCC.ReadOnly = true;
             this.txtMaNCC.Size = new System.Drawing.Size(145, 31);
             this.txtMaNCC.TabIndex = 27;
             // 
@@ -336,41 +338,6 @@
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // nHACUNGCAPBindingSource
-            // 
-            this.nHACUNGCAPBindingSource.DataMember = "NHACUNGCAP";
-            this.nHACUNGCAPBindingSource.DataSource = this.banGiayDataSet;
-            // 
-            // banGiayDataSet
-            // 
-            this.banGiayDataSet.DataSetName = "BanGiayDataSet";
-            this.banGiayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // chkTT
-            // 
-            this.chkTT.AutoSize = true;
-            this.chkTT.Checked = true;
-            this.chkTT.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkTT.Location = new System.Drawing.Point(982, 283);
-            this.chkTT.Name = "chkTT";
-            this.chkTT.Size = new System.Drawing.Size(143, 29);
-            this.chkTT.TabIndex = 38;
-            this.chkTT.Text = "Hoạt động";
-            this.chkTT.UseVisualStyleBackColor = true;
-            this.chkTT.CheckedChanged += new System.EventHandler(this.chkTT_CheckedChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(806, 505);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 33);
-            this.comboBox1.TabIndex = 39;
-            // 
-            // nHACUNGCAPTableAdapter
-            // 
-            this.nHACUNGCAPTableAdapter.ClearBeforeFill = true;
-            // 
             // colTenNCC
             // 
             this.colTenNCC.DataPropertyName = "TENNCC";
@@ -410,6 +377,41 @@
             this.colMaNCC.MinimumWidth = 10;
             this.colMaNCC.Name = "colMaNCC";
             this.colMaNCC.Width = 200;
+            // 
+            // nHACUNGCAPBindingSource
+            // 
+            this.nHACUNGCAPBindingSource.DataMember = "NHACUNGCAP";
+            this.nHACUNGCAPBindingSource.DataSource = this.banGiayDataSet;
+            // 
+            // banGiayDataSet
+            // 
+            this.banGiayDataSet.DataSetName = "BanGiayDataSet";
+            this.banGiayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // chkTT
+            // 
+            this.chkTT.AutoSize = true;
+            this.chkTT.Checked = true;
+            this.chkTT.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkTT.Location = new System.Drawing.Point(982, 283);
+            this.chkTT.Name = "chkTT";
+            this.chkTT.Size = new System.Drawing.Size(143, 29);
+            this.chkTT.TabIndex = 38;
+            this.chkTT.Text = "Hoạt động";
+            this.chkTT.UseVisualStyleBackColor = true;
+            this.chkTT.CheckedChanged += new System.EventHandler(this.chkTT_CheckedChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(806, 505);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 33);
+            this.comboBox1.TabIndex = 39;
+            // 
+            // nHACUNGCAPTableAdapter
+            // 
+            this.nHACUNGCAPTableAdapter.ClearBeforeFill = true;
             // 
             // QuanLyNCC
             // 
