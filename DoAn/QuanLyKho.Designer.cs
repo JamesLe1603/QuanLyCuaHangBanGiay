@@ -347,8 +347,10 @@
             // 
             // txtDVT
             // 
+            this.txtDVT.Enabled = false;
             this.txtDVT.Location = new System.Drawing.Point(257, 338);
             this.txtDVT.Name = "txtDVT";
+            this.txtDVT.ReadOnly = true;
             this.txtDVT.Size = new System.Drawing.Size(145, 31);
             this.txtDVT.TabIndex = 28;
             this.txtDVT.Text = "VNĐ";
