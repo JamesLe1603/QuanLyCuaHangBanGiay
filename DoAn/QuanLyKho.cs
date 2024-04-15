@@ -192,12 +192,12 @@ namespace DoAn
                         "',SOLUONG = " + sl +
                         ",DONGIA = " + dongia +
                         ",KHUYENMAI = " + km +
-                        ",TRANGTHAI = " + tt +
+                       // ",TRANGTHAI = " + tt +
                         ",MANCC = " + MaNCC +
-                        ",SIZE = " + size+
-                         ",TRANGTHAIBAN = " + tt
-                        + "WHERE MASP = " + int.Parse(txtMaSP.Text);
-
+                        ",SIZE = " + size +
+                         ",TRANGTHAIBAN = " + tt +
+                         " WHERE MASP = " + int.Parse(txtMaSP.Text);
+                    MessageBox.Show(sSQL);
 
                     //"MANCC = @MANCC, TENNHACUNGCAP = @TENNCC" +
                     //" DIACHI = @DIACHI, SDT = @SDT, TRANGTHAI = @TRANGTHAI";
