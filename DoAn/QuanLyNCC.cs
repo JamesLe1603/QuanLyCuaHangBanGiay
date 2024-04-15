@@ -113,6 +113,7 @@ namespace DoAn
         public void editNCC()
         {
             SqlConnection myConn = createConn();
+
             int tt = 0;
             try
             {

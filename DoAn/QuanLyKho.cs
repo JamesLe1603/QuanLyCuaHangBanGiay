@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DoAn
 {
@@ -74,7 +75,7 @@ namespace DoAn
         private void btnAdd_Click(object sender, EventArgs e)
         {//,XUATXU,GIANHAP,GIABAN,DONVITINH,SOLUONG,DONGIA,HINHANH,KHUYENMAI,TRANGTHAIBAN,MANCC
             SqlConnection myconnection = DataAcess.GetConnection();
-            if(string.IsNullOrWhiteSpace(txtTenSP.Text)||string.IsNullOrWhiteSpace(txtDonGia.Text)||string.IsNullOrWhiteSpace(txtGiaBan.Text)|| string.IsNullOrWhiteSpace(txtGiaNhap.Text) || string.IsNullOrWhiteSpace(txtSize.Text) || string.IsNullOrWhiteSpace(txtNCC.Text) || string.IsNullOrWhiteSpace(txtXuatXu.Text) || string.IsNullOrWhiteSpace(txtKM.Text))
+            if(string.IsNullOrWhiteSpace(txtTenSP.Text)||string.IsNullOrWhiteSpace(txtDonGia.Text)||string.IsNullOrWhiteSpace(txtGiaBan.Text)|| string.IsNullOrWhiteSpace(txtGiaNhap.Text) || string.IsNullOrWhiteSpace(txtSize.Text) || string.IsNullOrWhiteSpace(cboMaNCC.Text) || string.IsNullOrWhiteSpace(txtXuatXu.Text) || string.IsNullOrWhiteSpace(txtKM.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!","Lỗi",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
             }
@@ -86,7 +87,7 @@ namespace DoAn
                 double dongia = double.Parse(txtDonGia.Text.ToString());
                 int km = int.Parse(txtKM.Text);
                 int size = int.Parse(txtSize.Text);
-                int MaNCC = int.Parse(txtNCC.Text);
+                int MaNCC = int.Parse(cboMaNCC.Text);
                 try
                 {
                     myconnection.Open();
@@ -136,7 +137,7 @@ namespace DoAn
                 txtMaSP.Clear();
                 txtTenSP.Clear();
                 txtXuatXu.Clear();
-                txtNCC.Clear();
+                //cboMaNCC.Clear();
                 chkTT.Checked = false;
                 txtDonGia.Clear();
                 txtFind.Clear();
@@ -157,54 +158,63 @@ namespace DoAn
         //sua sp
         public void editProduct()
         {
-            //test thoi nha chu khong phai de day
-            SqlConnection myConn = DataAcess.GetConnection();
-            int tt = 0;
-            double gianhap = double.Parse(txtGiaNhap.Text);
-            double giaban = double.Parse(txtGiaBan.Text);
-            int sl = int.Parse(txtSL.Text);
-            double dongia = double.Parse(txtDonGia.Text);
-            int km = int.Parse(txtKM.Text);
-            int size = int.Parse(txtSize.Text);
-            int MaNCC = int.Parse(txtNCC.Text);
-            try
+            if (string.IsNullOrWhiteSpace(txtTenSP.Text) || string.IsNullOrWhiteSpace(txtDonGia.Text) || string.IsNullOrWhiteSpace(txtGiaBan.Text) || string.IsNullOrWhiteSpace(txtGiaNhap.Text) || string.IsNullOrWhiteSpace(txtSize.Text) || string.IsNullOrWhiteSpace(cboMaNCC.Text) || string.IsNullOrWhiteSpace(txtXuatXu.Text) || string.IsNullOrWhiteSpace(txtKM.Text))
             {
-                myConn.Open();
-
-                if (chkTT.Checked)
+                MessageBox.Show("Vui lòng chọn 1 sản phẩm!", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //test thoi nha chu khong phai de day
+                SqlConnection myConn = DataAcess.GetConnection();
+                int tt = 0;
+                double gianhap = double.Parse(txtGiaNhap.Text);
+                double giaban = double.Parse(txtGiaBan.Text);
+                int sl = int.Parse(txtSL.Text);
+                double dongia = double.Parse(txtDonGia.Text);
+                int km = int.Parse(txtKM.Text);
+                int size = int.Parse(txtSize.Text);
+                int MaNCC = int.Parse(cboMaNCC.Text);
+                try
                 {
-                    tt = 1;
+                    myConn.Open();
+
+                    if (chkTT.Checked)
+                    {
+                        tt = 1;
+                    }
+                    string sSQL = "UPDATE SANPHAM SET " +
+
+                        "TENSP = N'" + XoaKhoangTrang(txtTenSP.Text) +
+                        "',XUATXU = N'" + XoaKhoangTrang(txtXuatXu.Text) +
+                        "',GIANHAP = " + gianhap +
+                        ",GIABAN = " + giaban +
+                        ",DONVITINH = '" + txtDVT.Text +
+                        "',SOLUONG = " + sl +
+                        ",DONGIA = " + dongia +
+                        ",KHUYENMAI = " + km +
+                        ",TRANGTHAI = " + tt +
+                        ",MANCC = " + MaNCC +
+                        ",SIZE = " + size+
+                         ",TRANGTHAIBAN = " + tt
+                        + "WHERE MASP = " + int.Parse(txtMaSP.Text);
+
+
+                    //"MANCC = @MANCC, TENNHACUNGCAP = @TENNCC" +
+                    //" DIACHI = @DIACHI, SDT = @SDT, TRANGTHAI = @TRANGTHAI";
+
+                    SqlCommand sqlCommand = new SqlCommand(sSQL, myConn);
+                    sqlCommand.ExecuteNonQuery();
+                    myConn.Close();
+                    MessageBox.Show("Sửa thành công!");
+                    FindAll();
+                    //sqlCommand.Parameters.AddWithValue();
                 }
-                string sSQL = "UPDATE SANPHAM SET " +
-
-                    "TENSP = N'" + XoaKhoangTrang(txtTenSP.Text) +
-                    "',XUATXU = N'" + XoaKhoangTrang(txtXuatXu.Text) +
-                    "',GIANHAP = " + gianhap +
-                    ",GIABAN = " + giaban +
-                    ",DONVITINH = '" + txtDVT.Text +
-                    "',SOLUONG = " + sl+
-                    ",DONGIA = " + dongia+
-                    ",KHUYENMAI = " + km+
-                    ",TRANGTHAI = " + tt+
-                    ",MANCC = " + MaNCC+
-                    ",SIZE = " + size
-                    + "WHERE MASP = " + int.Parse(txtMaSP.Text);
-
-
-                //"MANCC = @MANCC, TENNHACUNGCAP = @TENNCC" +
-                //" DIACHI = @DIACHI, SDT = @SDT, TRANGTHAI = @TRANGTHAI";
-
-                SqlCommand sqlCommand = new SqlCommand(sSQL, myConn);
-                sqlCommand.ExecuteNonQuery();
-                myConn.Close();
-                MessageBox.Show("Sửa thành công!");
-                FindAll();
-                //sqlCommand.Parameters.AddWithValue();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -235,7 +245,7 @@ namespace DoAn
                 txtSL.Text=sl.ToString();
                 txtDonGia.Text = dongia.ToString();
                 txtKM.Text = km.ToString();
-                txtNCC.Text = mancc.ToString   ();
+                cboMaNCC.Text = mancc.ToString   ();
                 txtSize.Text = size.ToString();
                 if (tt)
                 {
@@ -243,13 +253,38 @@ namespace DoAn
                 }
                 else chkTT.Checked = false;
             }
+
         }
-       
+        public void ShowOnComboBox()
+        {
+            SqlConnection myConn = DataAcess.GetConnection();
+            string sql = "Select MaNCC from NhaCungCap";
+
+            try
+            {
+                myConn.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, myConn);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                myConn.Close();
+                //show 
+                cboMaNCC.DataSource = ds.Tables[0];
+                cboMaNCC.DisplayMember = "MaNCC";
+                //cboMaNCC.ValueMember = "MaNhaSanXuat";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
         private void QuanLyKho_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'banGiayDataSet1.SANPHAM' table. You can move, or remove it, as needed.
             this.sANPHAMTableAdapter.Fill(this.banGiayDataSet1.SANPHAM);
-
+            ShowOnComboBox();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -283,6 +318,21 @@ namespace DoAn
             {
                 e.Handled = true;
             }
+
+        }
+
+        private void chkTT_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboMaNCC_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
