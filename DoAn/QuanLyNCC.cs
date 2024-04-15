@@ -58,29 +58,37 @@ namespace DoAn
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SqlConnection myConn = createConn();
-            try
+            if (string.IsNullOrWhiteSpace(txtMaNCC.Text) || string.IsNullOrWhiteSpace(txtTenNCC.Text) || string.IsNullOrWhiteSpace(txtDT.Text) || string.IsNullOrWhiteSpace(txtDiaChi.Text) )
             {
-                myConn.Open();
-                String sSql = "INSERT INTO NHACUNGCAP(MANCC,TENNCC,DIACHI,SDT,TRANGTHAI) VALUES(" +
-                    "@MANCC,@TENNCC,@DIACHI,@SDT,@TRANGTHAI)";
-                SqlCommand sqlCommand= new SqlCommand(sSql, myConn);
-
-                sqlCommand.Parameters.Add("@MANCC", "0");
-                sqlCommand.Parameters.Add("@TENNCC",XoaKhoangTrang(txtTenNCC.Text));
-                sqlCommand.Parameters.Add("@DIACHI",XoaKhoangTrang(txtDiaChi.Text));
-                sqlCommand.Parameters.Add("@SDT", txtDT.Text);
-                sqlCommand.Parameters.Add("@TRANGTHAI", chkTT.Checked);
-
-                sqlCommand.ExecuteNonQuery();
-                myConn.Close();
-
-                MessageBox.Show("Thêm thành công");
-                FindAll();
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             }
-            catch(Exception ex )
+            else
             {
-                MessageBox.Show(ex.Message);    
+                try
+                {
+                    myConn.Open();
+                    String sSql = "INSERT INTO NHACUNGCAP(MANCC,TENNCC,DIACHI,SDT,TRANGTHAI) VALUES(" +
+                        "@MANCC,@TENNCC,@DIACHI,@SDT,@TRANGTHAI)";
+                    SqlCommand sqlCommand = new SqlCommand(sSql, myConn);
+
+                    sqlCommand.Parameters.Add("@MANCC", "0");
+                    sqlCommand.Parameters.Add("@TENNCC", XoaKhoangTrang(txtTenNCC.Text));
+                    sqlCommand.Parameters.Add("@DIACHI", XoaKhoangTrang(txtDiaChi.Text));
+                    sqlCommand.Parameters.Add("@SDT", txtDT.Text);
+                    sqlCommand.Parameters.Add("@TRANGTHAI", chkTT.Checked);
+
+                    sqlCommand.ExecuteNonQuery();
+                    myConn.Close();
+
+                    MessageBox.Show("Thêm thành công");
+                    FindAll();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+
             
         }
         
