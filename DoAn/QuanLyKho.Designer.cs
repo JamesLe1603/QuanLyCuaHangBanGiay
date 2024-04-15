@@ -65,17 +65,6 @@
             this.chkTT = new System.Windows.Forms.CheckBox();
             this.cboLoai = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.banGiayDataSet1 = new DoAn.BanGiayDataSet1();
-            this.LabelXX = new System.Windows.Forms.Label();
-            this.txtXuatXu = new System.Windows.Forms.TextBox();
-            this.LabelSize = new System.Windows.Forms.Label();
-            this.txtSize = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtKM = new System.Windows.Forms.TextBox();
-            this.sANPHAMTableAdapter = new DoAn.BanGiayDataSet1TableAdapters.SANPHAMTableAdapter();
             this.colTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colXuatXu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +77,17 @@
             this.colMaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.banGiayDataSet1 = new DoAn.BanGiayDataSet1();
+            this.LabelXX = new System.Windows.Forms.Label();
+            this.txtXuatXu = new System.Windows.Forms.TextBox();
+            this.LabelSize = new System.Windows.Forms.Label();
+            this.txtSize = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtKM = new System.Windows.Forms.TextBox();
+            this.sANPHAMTableAdapter = new DoAn.BanGiayDataSet1TableAdapters.SANPHAMTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.banGiayDataSet1)).BeginInit();
@@ -149,6 +149,7 @@
             this.txtGiaNhap.Name = "txtGiaNhap";
             this.txtGiaNhap.Size = new System.Drawing.Size(145, 31);
             this.txtGiaNhap.TabIndex = 30;
+            this.txtGiaNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
             // 
             // txtGiaBan
             // 
@@ -156,6 +157,7 @@
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(145, 31);
             this.txtGiaBan.TabIndex = 29;
+            this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
             // 
             // txtTenSP
             // 
@@ -372,6 +374,7 @@
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(145, 31);
             this.txtSL.TabIndex = 28;
+            this.txtSL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
             // 
             // label16
             // 
@@ -440,84 +443,6 @@
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // sANPHAMBindingSource
-            // 
-            this.sANPHAMBindingSource.DataMember = "SANPHAM";
-            this.sANPHAMBindingSource.DataSource = this.banGiayDataSet1;
-            // 
-            // banGiayDataSet1
-            // 
-            this.banGiayDataSet1.DataSetName = "BanGiayDataSet1";
-            this.banGiayDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // LabelXX
-            // 
-            this.LabelXX.AutoSize = true;
-            this.LabelXX.Location = new System.Drawing.Point(839, 288);
-            this.LabelXX.Name = "LabelXX";
-            this.LabelXX.Size = new System.Drawing.Size(91, 25);
-            this.LabelXX.TabIndex = 19;
-            this.LabelXX.Text = "Xuất xứ:";
-            // 
-            // txtXuatXu
-            // 
-            this.txtXuatXu.Location = new System.Drawing.Point(936, 289);
-            this.txtXuatXu.Name = "txtXuatXu";
-            this.txtXuatXu.Size = new System.Drawing.Size(145, 31);
-            this.txtXuatXu.TabIndex = 29;
-            // 
-            // LabelSize
-            // 
-            this.LabelSize.AutoSize = true;
-            this.LabelSize.Location = new System.Drawing.Point(191, 388);
-            this.LabelSize.Name = "LabelSize";
-            this.LabelSize.Size = new System.Drawing.Size(60, 25);
-            this.LabelSize.TabIndex = 16;
-            this.LabelSize.Text = "Size:";
-            // 
-            // txtSize
-            // 
-            this.txtSize.Location = new System.Drawing.Point(257, 385);
-            this.txtSize.Name = "txtSize";
-            this.txtSize.Size = new System.Drawing.Size(145, 31);
-            this.txtSize.TabIndex = 28;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(485, 388);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(92, 25);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "Đơn giá:";
-            // 
-            // txtDonGia
-            // 
-            this.txtDonGia.Location = new System.Drawing.Point(593, 388);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(145, 31);
-            this.txtDonGia.TabIndex = 28;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(799, 338);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(131, 25);
-            this.label18.TabIndex = 16;
-            this.label18.Text = "Khuyến mãi:";
-            // 
-            // txtKM
-            // 
-            this.txtKM.Location = new System.Drawing.Point(936, 338);
-            this.txtKM.Name = "txtKM";
-            this.txtKM.Size = new System.Drawing.Size(145, 31);
-            this.txtKM.TabIndex = 28;
-            // 
-            // sANPHAMTableAdapter
-            // 
-            this.sANPHAMTableAdapter.ClearBeforeFill = true;
             // 
             // colTenSP
             // 
@@ -614,6 +539,86 @@
             this.colMaSP.MinimumWidth = 10;
             this.colMaSP.Name = "colMaSP";
             this.colMaSP.Width = 200;
+            // 
+            // sANPHAMBindingSource
+            // 
+            this.sANPHAMBindingSource.DataMember = "SANPHAM";
+            this.sANPHAMBindingSource.DataSource = this.banGiayDataSet1;
+            // 
+            // banGiayDataSet1
+            // 
+            this.banGiayDataSet1.DataSetName = "BanGiayDataSet1";
+            this.banGiayDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // LabelXX
+            // 
+            this.LabelXX.AutoSize = true;
+            this.LabelXX.Location = new System.Drawing.Point(839, 288);
+            this.LabelXX.Name = "LabelXX";
+            this.LabelXX.Size = new System.Drawing.Size(91, 25);
+            this.LabelXX.TabIndex = 19;
+            this.LabelXX.Text = "Xuất xứ:";
+            // 
+            // txtXuatXu
+            // 
+            this.txtXuatXu.Location = new System.Drawing.Point(936, 289);
+            this.txtXuatXu.Name = "txtXuatXu";
+            this.txtXuatXu.Size = new System.Drawing.Size(145, 31);
+            this.txtXuatXu.TabIndex = 29;
+            // 
+            // LabelSize
+            // 
+            this.LabelSize.AutoSize = true;
+            this.LabelSize.Location = new System.Drawing.Point(191, 388);
+            this.LabelSize.Name = "LabelSize";
+            this.LabelSize.Size = new System.Drawing.Size(60, 25);
+            this.LabelSize.TabIndex = 16;
+            this.LabelSize.Text = "Size:";
+            // 
+            // txtSize
+            // 
+            this.txtSize.Location = new System.Drawing.Point(257, 385);
+            this.txtSize.Name = "txtSize";
+            this.txtSize.Size = new System.Drawing.Size(145, 31);
+            this.txtSize.TabIndex = 28;
+            this.txtSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(485, 388);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 25);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Đơn giá:";
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Location = new System.Drawing.Point(593, 388);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(145, 31);
+            this.txtDonGia.TabIndex = 28;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(799, 338);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(131, 25);
+            this.label18.TabIndex = 16;
+            this.label18.Text = "Khuyến mãi:";
+            // 
+            // txtKM
+            // 
+            this.txtKM.Location = new System.Drawing.Point(936, 338);
+            this.txtKM.Name = "txtKM";
+            this.txtKM.Size = new System.Drawing.Size(145, 31);
+            this.txtKM.TabIndex = 28;
+            this.txtKM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly);
+            // 
+            // sANPHAMTableAdapter
+            // 
+            this.sANPHAMTableAdapter.ClearBeforeFill = true;
             // 
             // QuanLyKho
             // 

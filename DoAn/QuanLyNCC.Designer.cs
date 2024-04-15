@@ -137,6 +137,7 @@
             this.txtDT.Name = "txtDT";
             this.txtDT.Size = new System.Drawing.Size(145, 31);
             this.txtDT.TabIndex = 29;
+            this.txtDT.TextChanged += new System.EventHandler(this.txtDT_TextChanged);
             this.txtDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDT_KeyPress);
             // 
             // txtTenNCC
